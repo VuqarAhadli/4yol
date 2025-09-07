@@ -1,20 +1,29 @@
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Banner from "@/components/Banner"; // optional
 
-export default function HomePage() {
+export const metadata = {
+  title: "4YOL",
+  description: "4YOL – Motoblog and Road Stories",
+};
+
+export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8">
-      <h1 className="text-4xl font-extrabold mb-4">Welcome to 4YOL</h1>
-        <p className="text-lg text-center max-w-xl">
-          We are building this site step-by-step. 👋 Start editing files in <code>src/app</code> and watch changes live.
-                </p>
+    <>
+      <Navbar />
+      <Banner />
 
+      <section className="container mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold mb-4">Latest News</h2>
+        <p>No news yet.</p>
+      </section>
 
-      <div className="mt-6 flex gap-3">
-        <Link href="/about" className="px-4 py-2 rounded bg-gray-900 text-white">About</Link>
-        <Link href="/blog" className="px-4 py-2 rounded border">Blog</Link>
-        <Link href="/news/general" className="px-4 py-2 rounded border">News</Link>
-      </div>
-    </main>
+      <section className="container mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold mb-4">Latest Blog Posts</h2>
+        <p>No blog posts yet.</p>
+      </section>
+
+      <Footer />
+    </>
   );
 }
-
